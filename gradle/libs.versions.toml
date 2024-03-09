@@ -13,7 +13,7 @@ retrofitGson = "2.9.0"
 retrofit = "2.9.0"
 okHttp = "4.12.0"
 okHttpLoggingInterceptor = "4.12.0"
-viewPager2 = "2.1.0"
+viewPager2 = "1.0.0"
 swipeRefreshLayout = "1.1.0"
 hilt = "2.50"
 hiltCompiler = "2.50"
@@ -41,7 +41,7 @@ androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-toolin
 androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
-retrofit = {group = "com.squareup.retrofit2", name = "retrofit2", version.ref = "retrofit"}
+retrofit = {group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit"}
 retrofitGson = {group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofitGson"}
 okHttp = {group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okHttp"}
 okHttpLoggingInterceptor = {group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okHttpLoggingInterceptor"}
