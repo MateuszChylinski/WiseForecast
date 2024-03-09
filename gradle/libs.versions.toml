@@ -7,7 +7,24 @@ junitVersion = "1.1.5"
 espressoCore = "3.5.1"
 lifecycleRuntimeKtx = "2.7.0"
 activityCompose = "1.8.2"
-composeBom = "2023.08.00"
+composeBom = "2024.02.02"
+
+retrofitGson = "2.9.0"
+retrofit = "2.9.0"
+okHttp = "4.12.0"
+okHttpLoggingInterceptor = "4.12.0"
+viewPager2 = "2.1.0"
+swipeRefreshLayout = "1.1.0"
+hilt = "2.50"
+hiltCompiler = "2.50"
+hiltNavigationCompose = "1.2.0"
+viewModelCompose = "2.7.0"
+liveData = "2.7.0"
+savedState = "2.7.0"
+locationServices = "21.2.0"
+accompanist = "0.34.0"
+glide = "4.16.0"
+hiltAndroid = "2.50"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -24,8 +41,24 @@ androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-toolin
 androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
+retrofit = {group = "com.squareup.retrofit2", name = "retrofit2", version.ref = "retrofit"}
+retrofitGson = {group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofitGson"}
+okHttp = {group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okHttp"}
+okHttpLoggingInterceptor = {group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okHttpLoggingInterceptor"}
+viewPager = { group = "androidx.viewpager2", name = "viewpager2", version.ref = "viewPager2"}
+swipeRefreshLayout = { group = "androidx.swiperefreshlayout", name = "swiperefreshlayout", version.ref = "swipeRefreshLayout" }
+hilt = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt"}
+hiltCompiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hiltCompiler"}
+hiltNavigationCompose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hiltNavigationCompose"}
+viewModelCompose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "viewModelCompose"}
+liveData = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "liveData"}
+savedState = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-savedstate", version.ref = "savedState"}
+locationServices = { group = "com.google.android.gms", name = "play-services-location", version.ref = "locationServices"}
+accompanist = { group = "com.google.accompanist", name = "accompanist-permissions", version.ref = "accompanist"}
+glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide"}
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+hiltAndroid = { id = "com.google.dagger.hilt.android", version.ref = "hiltAndroid"}
 

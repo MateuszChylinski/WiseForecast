@@ -1,10 +1,8 @@
 plugins {
-    id("com.android.application")
-    id("org.jetbrains.kotlin.android")
-    id ("com.google.dagger.hilt.android")
     id ("kotlin-kapt")
-    id ("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
-
+    alias(libs.plugins.androidApplication)
+    alias(libs.plugins.jetbrainsKotlinAndroid)
+    alias(libs.plugins.hiltAndroid)
 }
 
 android {
@@ -72,38 +70,36 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 
     //Retrofit
-    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
-    implementation("com.squareup.retrofit2:retrofit:2.9.0:")
+    implementation(libs.retrofitGson)
+    implementation(libs.retrofit)
 
     //okHttp/Logging
-    implementation("com.squareup.okhttp3:okhttp:4.12.0")
-    implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
+    implementation(libs.okHttp)
+    implementation(libs.okHttpLoggingInterceptor)
     //UI
-    implementation("androidx.viewpager2:viewpager2:1.0.0")
-    implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
+    implementation(libs.viewPager)
+    implementation(libs.swipeRefreshLayout)
 
     //Hilt
-    implementation ("com.google.dagger:hilt-android:2.50")
-    kapt ("com.google.dagger:hilt-compiler:2.50")
-
-    kapt ("com.google.dagger:hilt-compiler:2.50")
-    implementation ("androidx.hilt:hilt-navigation-compose:1.2.0")
-
+    implementation (libs.hilt)
+    kapt (libs.hiltCompiler)
+    implementation (libs.hiltNavigationCompose)
 
     //ViewModel
-    implementation ("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0")
-    implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.7.0")
-    implementation ("androidx.lifecycle:lifecycle-viewmodel-savedstate:2.7.0")
+    implementation (libs.viewModelCompose)
+    implementation (libs.liveData)
+    implementation (libs.savedState)
 
     //Glide
-    implementation ("com.github.bumptech.glide:glide:4.16.0")
-    implementation ("com.google.android.gms:play-services-location:21.1.0")
+    implementation (libs.glide)
 
+    //Location services
+    implementation (libs.locationServices)
 
-    implementation ("com.google.android.gms:play-services-location:21.1.0")
-    implementation("com.google.accompanist:accompanist-permissions:0.34.0")
-
+    //Accompanist (permissions)
+    implementation(libs.accompanist)
 }
+
 kapt {
     correctErrorTypes = true
 }
