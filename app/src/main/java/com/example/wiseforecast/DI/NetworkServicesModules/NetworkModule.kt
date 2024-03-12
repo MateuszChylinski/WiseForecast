@@ -1,4 +1,4 @@
-package com.example.wiseforecast.DI.NetworkServices
+package com.example.wiseforecast.DI.NetworkServicesModules
 
 import com.example.wiseforecast.Repositories.ForecastRepository
 import com.example.wiseforecast.ServerRequests.ForecastRequests
