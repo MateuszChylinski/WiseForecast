@@ -112,6 +112,10 @@ dependencies {
 
     //Accompanist (permissions)
     implementation(libs.accompanist)
+
+    //Compose LiveData
+    implementation(libs.composeLiveData)
+
 }
 
 kapt {

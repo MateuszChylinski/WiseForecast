@@ -35,6 +35,7 @@ class LocationRequestImplementation(
             Context.LOCATION_SERVICE
         ) as LocationManager
 
+
         val isGpsEnabled = locationManager.isProviderEnabled(
             LocationManager.NETWORK_PROVIDER
         ) || locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)
