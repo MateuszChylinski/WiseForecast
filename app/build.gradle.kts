@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     id ("kotlin-kapt")
     alias(libs.plugins.androidApplication)
@@ -10,6 +12,17 @@ android {
     compileSdk = 34
 
     defaultConfig {
+        val apiKeyFiles = rootProject.file("local.properties")
+        val properties = Properties()
+        properties.load(apiKeyFiles.inputStream())
+        val apiKey = properties.getProperty("API_KEY") ?: "Missing api key"
+
+        buildConfigField(
+            type = "String",
+            name = "API_KEY",
+            value = apiKey
+        )
+
         applicationId = "com.example.wiseforecast"
         minSdk = 24
         targetSdk = 34
@@ -40,6 +53,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
@@ -98,6 +112,13 @@ dependencies {
 
     //Accompanist (permissions)
     implementation(libs.accompanist)
+
+    //Compose LiveData
+    implementation(libs.composeLiveData)
+
+    //Compose Navigation
+    implementation(libs.navigationCompose)
+
 }
 
 kapt {
