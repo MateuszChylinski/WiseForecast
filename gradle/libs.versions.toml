@@ -26,6 +26,7 @@ accompanist = "0.34.0"
 glide = "4.16.0"
 hiltAndroid = "2.50"
 composeLiveData = "1.6.4"
+composeNavigation = "2.7.7"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -58,6 +59,7 @@ locationServices = { group = "com.google.android.gms", name = "play-services-loc
 accompanist = { group = "com.google.accompanist", name = "accompanist-permissions", version.ref = "accompanist"}
 glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide"}
 composeLiveData = {group = "androidx.compose.runtime", name = "runtime-livedata", version.ref = "composeLiveData"}
+navigationCompose = {group = "androidx.navigation", name = "navigation-compose", version.ref = "composeNavigation"}
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }

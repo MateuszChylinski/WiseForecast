@@ -116,6 +116,9 @@ dependencies {
     //Compose LiveData
     implementation(libs.composeLiveData)
 
+    //Compose Navigation
+    implementation(libs.navigationCompose)
+
 }
 
 kapt {

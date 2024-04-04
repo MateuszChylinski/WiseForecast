@@ -6,9 +6,9 @@ import com.example.wiseforecast.ServerRequests.ForecastRequests
 class ForecastRepository (private val forecastRequests: ForecastRequests)
 {
     suspend fun requestCurrentForecastByLocation(
-        longitude: Double,
-        latitude: Double,
-        units: String
+        longitude: Double?,
+        latitude: Double?,
+        units: String?
     ) =
         forecastRequests.currentForecastByLocation(
             longitude = longitude,
