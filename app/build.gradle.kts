@@ -1,3 +1,7 @@
+import org.jetbrains.kotlin.gradle.plugin.extraProperties
+import java.io.FileInputStream
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
@@ -9,12 +13,17 @@ android {
     namespace = "com.example.wiseforecast"
     compileSdk = 34
 
+    val localPropertiesFile = rootProject.file("local.properties")
+    val localProperties = Properties()
+    localProperties.load(FileInputStream(localPropertiesFile))
+
     defaultConfig {
         applicationId = "com.example.wiseforecast"
         minSdk = 30
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
+        buildConfigField ("String", "API_KEY", localProperties["API_KEY"].toString())
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -40,6 +49,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
