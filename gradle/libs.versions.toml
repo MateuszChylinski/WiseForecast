@@ -10,7 +10,7 @@ activityCompose = "1.9.1"
 composeBom = "2024.06.00"
 okHttpVer = "4.12.0"
 retrofitVer = "2.11.0"
-gsonVer = "2.10.1"
+gsonVer = "2.11.0"
 hiltVersion = "2.52"
 
 [libraries]
@@ -30,7 +30,7 @@ androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 okHttp = {group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okHttpVer"}
 retrofit = {group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofitVer"}
-gson = {group = "com.google.code.gson", name = "gson", version.ref = "gsonVer"}
+gson = {group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "gsonVer"}
 
 hilt = {group = "com.google.dagger", name = "hilt-android", version.ref = "hiltVersion"}
 hilt-compiler = {group = "com.google.dagger", name = "hilt-compiler", version.ref = "hiltVersion"}
