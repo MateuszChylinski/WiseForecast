@@ -7,11 +7,13 @@ junitVersion = "1.2.1"
 espressoCore = "3.6.1"
 lifecycleRuntimeKtx = "2.8.4"
 activityCompose = "1.9.1"
-composeBom = "2024.06.00"
+composeBom = "2024.08.00"
 okHttpVer = "4.12.0"
 retrofitVer = "2.11.0"
 gsonVer = "2.11.0"
 hiltVersion = "2.52"
+accompanistVersion = "0.35.1-alpha"
+composeViewModelVersion = "2.8.4"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -31,13 +33,10 @@ androidx-material3 = { group = "androidx.compose.material3", name = "material3" 
 okHttp = {group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okHttpVer"}
 retrofit = {group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofitVer"}
 gson = {group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "gsonVer"}
-
 hilt = {group = "com.google.dagger", name = "hilt-android", version.ref = "hiltVersion"}
 hilt-compiler = {group = "com.google.dagger", name = "hilt-compiler", version.ref = "hiltVersion"}
-
-#hilt = {group = "com.google.dagger", name = "hilt-android-testing", version.ref = "hiltVersion"}
-#hilt = {group = "com.google.dagger", name = "hilt-compiler", version.ref = "hiltVersion"}
-
+accompanist = { group = "com.google.accompanist", name = "accompanist-permissions", version.ref = "accompanistVersion"}
+composeViewModel = {group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "composeViewModelVersion"}
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

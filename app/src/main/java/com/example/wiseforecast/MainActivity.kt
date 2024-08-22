@@ -3,18 +3,15 @@ package com.example.wiseforecast
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.viewModels
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import com.example.wiseforecast.ViewModels.CurrentForecastViewModel
 import com.example.wiseforecast.ui.theme.WiseForecastTheme
+import com.google.accompanist.permissions.ExperimentalPermissionsApi
+import com.google.accompanist.permissions.rememberMultiplePermissionsState
 import dagger.hilt.android.AndroidEntryPoint
+import androidx.lifecycle.viewmodel.compose.viewModel
+
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -22,26 +19,53 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             WiseForecastTheme {
-                val vm by viewModels<CurrentForecastViewModel>()
-                LaunchedEffect(Unit) {
-                    vm.test()
-                }
+                checkPermissions()
             }
         }
     }
 }
 
-//@Composable
-//fun Greeting(name: String, modifier: Modifier = Modifier) {
-//    Text(
-//        text = "ASD:d",
-//        modifier = modifier
-//    )
-//}
-//
-//@Preview(showBackground = true)
-//@Composable
-//fun GreetingPreview() {
-//    WiseForecastTheme {
-//        Greeting("Android")
-//    }
+@OptIn(ExperimentalPermissionsApi::class)
+@Composable
+private fun checkPermissions(
+    forecastViewModel: CurrentForecastViewModel = viewModel()
+) {
+    val locationPermissionsState = rememberMultiplePermissionsState(
+        permissions = listOf(
+            android.Manifest.permission.ACCESS_COARSE_LOCATION,
+            android.Manifest.permission.ACCESS_FINE_LOCATION
+        )
+    )
+
+    if (locationPermissionsState.allPermissionsGranted) {
+        LaunchedEffect(Unit) {
+            forecastViewModel.test()
+        }
+    } else {
+        val isAllPermissionsRevoked =
+            locationPermissionsState.permissions.size == locationPermissionsState.revokedPermissions.size
+
+        if (!isAllPermissionsRevoked) { // coarse granted
+            //TODO - ask for fine location
+        } else if (locationPermissionsState.shouldShowRationale) { // both permissions were rejected
+            // TODO display rationale?
+        } else {
+            //TODO user either sees it for the first time, or already denied permissions twice
+        }
+
+        //TODO?
+        /*
+       val buttonText = if (!allPermissionsRevoked) {
+                "Allow precise location"
+            } else {
+                "Request permissions"
+            }
+
+            Text(text = textToShow)
+            Spacer(modifier = Modifier.height(8.dp))
+            Button(onClick = { locationPermissionsState.launchMultiplePermissionRequest() }) {
+                Text(buttonText)
+            }
+         */
+    }
+}
